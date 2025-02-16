@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale -->
+        <aside class="toolbar">
+            <h2>Personnalisation</h2>
+            <label>Police :</label>
+            <select id="fontSelect">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+            </select>
+
+            <label>Couleur de fond :</label>
+            <input type="color" id="bgColorPicker">
+
+            <label>Couleur du texte :</label>
+            <input type="color" id="textColorPicker">
+
+            <button id="downloadPDF">Télécharger PDF</button>
+        </aside>
+
+        <!-- Zone d'aperçu -->
+        <main class="cv-preview" id="cv">
+            <!-- Ajout d'un input pour uploader une image -->
+            <label for="profilePicUpload" class="toolbar">Photo de profil :</label>
+            <input type="file" id="profilePicUpload" accept="image/*">
+            <!-- Photo de profil -->
+            <img id="profilePic" class="profile-picture" src="default-avatar.png" alt="Photo de profil">
+
+            <h1 contenteditable="true">Nom Prénom</h1>
+            <h2 contenteditable="true">Titre du poste</h2>
+            <p contenteditable="true">Présentation rapide...</p>
+            <h3>Compétences</h3>
+            <ul contenteditable="true">
+                <li>Compétence 1</li>
+                <li>Compétence 2</li>
+            </ul>
+            <h3>Langues</h3>
+            <ul contenteditable="true">
+                <li>Français</li>
+                <li>Anglais</li>
+            </ul>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
